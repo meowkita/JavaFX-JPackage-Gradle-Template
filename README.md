@@ -2,7 +2,7 @@
 
 Gradle template for quick start developing GUI applications using `JavaFX`, automatic image creation with `JLink` and simple packaging with `JPackage`.
 
-![jpackage output](/images/output.png)
+![jpackage output](images/output.png)
 
 ---
 
@@ -45,4 +45,4 @@ Created executables will be available in `\build\jpackage`
 
 Final result after executing `.\gradlew.bat jpackage` command, installing and launching  
 
-![jpackage output](/images/run.png)
+![jpackage output](images/run.png)
