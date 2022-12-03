@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'org.beryx.jlink' version '2.25.0'
+}
+
+group 'io.meowkita.jjgt'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    // The name of the main module. Found in the file 'src/main/java/module-info.java'.
+    mainModule = 'jjgt'
+
+    // The path and name of the main class.
+    mainClass = 'io.meowkita.jjgt.HelloFX'
+}
+
+javafx {
+    // The version of JavaFX
+    version = "11"
+
+    // JavaFX dependencies
+    modules = [ 'javafx.controls' ]
+}
+
+jlink {
+    // JLink build arguments
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+
+    // The name of the packed executable. The default name is your project name and version.
+    // name = 'your_app_name'
+
+    // JPackage build arguments
+    jpackage {
+        installerOptions = ['--win-per-user-install', '--win-dir-chooser', '--win-menu', '--win-shortcut', '--verbose']
+    }
+}
